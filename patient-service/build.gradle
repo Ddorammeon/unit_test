@@ -1,0 +1,132 @@
+import org.gradle.jvm.toolchain.JavaLanguageVersion
+
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.7'
+}
+
+group = 'com.main_project'
+version = '0.0.1-SNAPSHOT'
+description = 'patient-service'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+jacoco {
+    toolVersion = '0.8.11'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+ext {
+    set('springCloudVersion', "2023.0.0")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'org.postgresql:postgresql'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'com.nimbusds:nimbus-jose-jwt:9.1.1'
+
+    implementation 'org.axonframework:axon-spring-boot-starter:4.12.2'
+    implementation 'com.do_an:common:1.0.0'
+
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+    systemProperty 'includeBusinessLogicFailures', System.getProperty('includeBusinessLogicFailures', 'false')
+    testLogging {
+        events "passed", "failed", "skipped"
+        exceptionFormat "full"
+        showExceptions true
+        showCauses true
+        showStackTraces true
+        showStandardStreams false
+    }
+    afterSuite { descriptor, result ->
+        if (!descriptor.parent) {
+            println "\nTest result: ${result.resultType}"
+            println "Test summary: ${result.testCount} tests, ${result.successfulTestCount} passed, ${result.failedTestCount} failed, ${result.skippedTestCount} skipped\n"
+        }
+    }
+    finalizedBy tasks.named('jacocoTestReport')
+}
+
+tasks.named('jacocoTestReport') {
+    dependsOn tasks.named('test')
+    reports {
+        xml.required = true
+        csv.required = true
+        html.required = true
+    }
+    finalizedBy 'coverageSummarySvg'
+}
+
+tasks.register('coverageSummarySvg') {
+    dependsOn tasks.named('jacocoTestReport')
+
+    doLast {
+        File csvReport = layout.buildDirectory.file('reports/jacoco/test/jacocoTestReport.csv').get().asFile
+        File svgReport = layout.buildDirectory.file('reports/jacoco/test/coverage-summary.svg').get().asFile
+
+        if (!csvReport.exists()) {
+            throw new GradleException("JaCoCo CSV report not found: ${csvReport}")
+        }
+
+        List<String> lines = csvReport.readLines()
+        String[] headers = lines.first().split(',')
+        int missedIndex = headers.findIndexOf { it == 'LINE_MISSED' }
+        int coveredIndex = headers.findIndexOf { it == 'LINE_COVERED' }
+
+        int missedLines = 0
+        int coveredLines = 0
+        lines.drop(1).each { line ->
+            String[] values = line.split(',')
+            missedLines += values[missedIndex] as int
+            coveredLines += values[coveredIndex] as int
+        }
+
+        int totalLines = missedLines + coveredLines
+        int coveragePercent = totalLines == 0 ? 0 : Math.round((coveredLines * 100.0f) / totalLines)
+        int barWidth = Math.max(1, Math.round(coveragePercent * 4.8f))
+        String barColor = coveragePercent >= 80 ? '#198754' : coveragePercent >= 60 ? '#ffc107' : '#dc3545'
+
+        svgReport.parentFile.mkdirs()
+        svgReport.text = """<svg xmlns="http://www.w3.org/2000/svg" width="720" height="260" viewBox="0 0 720 260">
+  <rect width="720" height="260" fill="#f8f9fa"/>
+  <text x="36" y="52" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#212529">Patient Service Coverage</text>
+  <text x="36" y="88" font-family="Arial, sans-serif" font-size="16" fill="#495057">JaCoCo line coverage after unit test execution</text>
+  <rect x="36" y="124" width="480" height="34" rx="6" fill="#dee2e6"/>
+  <rect x="36" y="124" width="${barWidth}" height="34" rx="6" fill="${barColor}"/>
+  <text x="540" y="151" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#212529">${coveragePercent}%</text>
+  <text x="36" y="198" font-family="Arial, sans-serif" font-size="18" fill="#212529">Covered lines: ${coveredLines}</text>
+  <text x="260" y="198" font-family="Arial, sans-serif" font-size="18" fill="#212529">Missed lines: ${missedLines}</text>
+  <text x="36" y="230" font-family="Arial, sans-serif" font-size="14" fill="#6c757d">Source: build/reports/jacoco/test/jacocoTestReport.csv</text>
+</svg>
+"""
+    }
+}
