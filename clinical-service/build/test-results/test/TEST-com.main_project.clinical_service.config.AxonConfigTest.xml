@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.main_project.clinical_service.config.AxonConfigTest" tests="2" skipped="0" failures="0" errors="0" timestamp="2026-05-13T14:35:49" hostname="DESKTOP-9TQBJQE" time="0.419">
+  <properties/>
+  <testcase name="CLN-SRV-UT-049 - configureXStream should allow common wildcard types" classname="com.main_project.clinical_service.config.AxonConfigTest" time="0.406"/>
+  <testcase name="CLN-SRV-UT-050 - configureXStream should configure project wildcard types once" classname="com.main_project.clinical_service.config.AxonConfigTest" time="0.004"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

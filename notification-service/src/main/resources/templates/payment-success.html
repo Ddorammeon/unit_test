@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Đặt vé thành công - CGV Cinemas</title>
+    <!--[if !mso]><!-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!--<![endif]-->
+    <style type="text/css">
+        /* Base styling */
+        body, html {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            font-family: 'Poppins', Arial, sans-serif !important;
+        }
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            display: block;
+        }
+        a {
+            color: #e71a0f;
+            text-decoration: none;
+        }
+        p, h1, h2, h3, h4, h5, h6 {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+        }
+
+        /* Responsive adjustments */
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+            }
+            .mobile-padding {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            .mobile-header {
+                padding: 25px 15px !important;
+            }
+            .mobile-stacked-item {
+                width: 100% !important;
+                display: block !important;
+            }
+            .mobile-center {
+                text-align: center !important;
+            }
+            .mobile-padding-bottom {
+                padding-bottom: 20px !important;
+            }
+            .mobile-small-text {
+                font-size: 14px !important;
+            }
+            .mobile-icon {
+                margin: 0 auto 15px !important;
+            }
+            .mobile-no-padding {
+                padding: 0 !important;
+            }
+        }
+        
+        /* Hover effects polyfill for Outlook */
+        .seat-chip:hover {
+            background-color: #e71a0f !important;
+            color: #ffffff !important;
+            border-color: #e71a0f !important;
+        }
+        .social-icon:hover {
+            background-color: #d10a05 !important;
+        }
+        .ticket-card:hover {
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08) !important;
+            transform: translateY(-4px) !important;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #f5f5f7; font-family: 'Poppins', Arial, sans-serif;">
+    <!-- Email Container -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #f5f5f7;">
+        <tr>
+            <td style="padding: 20px 0;">
+                <!-- Email Content -->
+                <table align="center" border="0" cellpadding="0" cellspacing="0" width="600" class="container" style="background-color: #ffffff; border-radius: 20px; overflow: hidden; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);">
+                    <!-- Header Section -->
+                    <tr>
+                        <td align="center" class="mobile-header" style="background-color: #e71a0f; padding: 35px 20px; background-image: linear-gradient(135deg, #e71a0f 0%, #890000 100%);">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-top: 10px;">
+                                        <h1 style="color: #ffffff; font-size: 30px; font-weight: 700; margin: 0; letter-spacing: -0.5px; font-family: 'Poppins', Arial, sans-serif; text-shadow: 0 2px 4px rgba(0,0,0,0.2);">Đặt Vé Thành Công</h1>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Content Section -->
+                    <tr>
+                        <td class="mobile-padding" style="padding: 40px 40px 30px;">
+                            <!-- Success Badge -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #e6ffed; border-radius: 12px; margin-bottom: 30px; border: 1px solid #b7eac9; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);">
+                                <tr>
+                                    <td style="padding: 18px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td width="40" valign="top">
+                                                    <div style="background-color: #28a745; width: 36px; height: 36px; border-radius: 50%; display: inline-block; text-align: center; vertical-align: middle; line-height: 36px; color: white; font-size: 20px; font-weight: bold;">✓</div>
+                                                </td>
+                                                <td style="padding-left: 15px;">
+                                                    <p style="font-weight: 600; font-size: 17px; color: #1e4620;">Thanh toán của bạn đã được xác nhận!</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Greeting -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px;">
+                                <tr>
+                                    <td>
+                                        <p style="font-size: 16px; line-height: 1.6; color: #444444; margin-bottom: 15px;">Xin chào <strong th:text="${userName}" style="color: #222222;">Quý khách</strong>,</p>
+                                        <p style="font-size: 16px; line-height: 1.6; color: #444444;">Cảm ơn bạn đã lựa chọn dịch vụ của chúng tôi. Dưới đây là thông tin chi tiết về đơn đặt vé của bạn:</p>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Customer Info Section -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px; border: 1px solid #eeeeee; border-radius: 16px; overflow: hidden; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);">
+                                <tr>
+                                    <td style="background-color: #f8f9fa; border-bottom: 1px solid #eeeeee; padding: 16px 20px;">
+                                        <h2 style="font-size: 18px; font-weight: 600; color: #222222; margin: 0;">Thông Tin Khách Hàng</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <!-- Left Column -->
+                                                <td width="50%" class="mobile-stacked-item mobile-padding-bottom" valign="top">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td style="padding-bottom: 15px;">
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Khách hàng</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${userName}">Nguyễn Văn A</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Email</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${userEmail}">example@gmail.com</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <!-- Right Column -->
+                                                <td width="50%" class="mobile-stacked-item" valign="top">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td style="padding-bottom: 15px;">
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Ngày đặt vé</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${bookingDate}">25/05/2025 15:30:45</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Số điện thoại</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${userPhone}">0901234567</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Movie Info Section -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px; border: 1px solid #eeeeee; border-radius: 16px; overflow: hidden; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);">
+                                <tr>
+                                    <td style="background-color: #f8f9fa; border-bottom: 1px solid #eeeeee; padding: 16px 20px;">
+                                        <h2 style="font-size: 18px; font-weight: 600; color: #222222; margin: 0;">Thông Tin Suất Chiếu</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <!-- Movie Title -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 20px;">
+                                            <tr>
+                                                <td align="center">
+                                                    <h3 style="font-size: 22px; font-weight: 700; color: #e71a0f; margin: 0; line-height: 1.4;" th:text="${movieName}">Tên Phim Siêu Dài Để Kiểm Tra Giao Diện</h3>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Movie Details -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 25px;">
+                                            <tr>
+                                                <!-- Left Column -->
+                                                <td width="50%" class="mobile-stacked-item mobile-padding-bottom" valign="top">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td style="padding-bottom: 15px;">
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Thể loại</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${movieGenre}">Hành động, Phiêu lưu</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-bottom: 15px;">
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Ngôn ngữ</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${movieLanguage}">Tiếng Anh - Phụ đề Việt</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-bottom: 15px;">
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Ngày chiếu</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${showDate}">25/05/2025</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Phòng chiếu</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${roomName}">Cinema 1</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                                <!-- Right Column -->
+                                                <td width="50%" class="mobile-stacked-item" valign="top">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td style="padding-bottom: 15px;">
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Thời lượng</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${movieDuration + ' phút'}">120 phút</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-bottom: 15px;">
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Đạo diễn</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${movieDirector}">Christopher Nolan</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-bottom: 15px;">
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Giờ chiếu</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${showTime + ' - ' + endTime}">19:30 - 21:30</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Loại phòng</p>
+                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${roomType}">2D</p>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Seats Section -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="padding-bottom: 12px;">
+                                                    <p style="font-size: 16px; font-weight: 600; color: #222222;">Ghế đã đặt (<span th:text="${seatsCount}">2</span> ghế)</p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td>
+                                                                <div th:each="seat : ${seats}" style="display: inline-block; margin: 0 10px 10px 0;">
+                                                                    <table border="0" cellpadding="0" cellspacing="0" class="seat-chip" style="border-radius: 20px; border: 1px solid #fdd8db; background-color: #ffeef0;">
+                                                                        <tr>
+                                                                            <td style="padding: 7px 14px; font-size: 14px; font-weight: 500; color: #e71a0f;" th:text="${seat.name}">A01</td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Tickets Detail Section -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 30px; border: 1px solid #eeeeee; border-radius: 16px; overflow: hidden; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);" th:if="${tickets != null && !tickets.isEmpty()}">
+                                <tr>
+                                    <td style="background-color: #f8f9fa; border-bottom: 1px solid #eeeeee; padding: 16px 20px;">
+                                        <h2 style="font-size: 18px; font-weight: 600; color: #222222; margin: 0;">Chi Tiết Vé</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <!-- Tickets Grid -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 25px;">
+                                            <tr>
+                                                <td>
+                                                    <div th:each="ticket : ${tickets}" style="display: inline-block; vertical-align: top; width: 48%; margin: 0 1% 20px; min-width: 250px;" class="mobile-stacked-item">
+                                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" class="ticket-card" style="border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06); border: 1px solid #eeeef1; transition: all 0.3s ease;">
+                                                            <tr>
+                                                                <td style="background: linear-gradient(135deg, #e71a0f 0%, #d10a05 100%); color: #ffffff; padding: 14px 18px; font-weight: 600; font-size: 16px; text-align: center;" th:text="${'Vé ' + ticket.id}">Vé TK001</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td style="padding: 20px;">
+                                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                                        <tr>
+                                                                            <td style="padding-bottom: 15px;">
+                                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Mã vé</p>
+                                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${ticket.id}">TK001</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="padding-bottom: 15px;">
+                                                                                <p style="font-size: 13px; font-weight: 500; color: #777777; margin-bottom: 5px;">Ghế</p>
+                                                                                <p style="font-size: 15px; font-weight: 500; color: #333333;" th:text="${ticket.seatScheduleId}">A01 (VIP)</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <td style="text-align: right;">
+                                                                                <p style="font-size: 19px; font-weight: 700; color: #e71a0f;" th:text="${#numbers.formatDecimal(ticket.price, 0, 'COMMA', 0, 'POINT') + ' VNĐ'}">90.000 VNĐ</p>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </table>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+
+                                        <!-- Summary -->
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fdfdfd; border-radius: 12px; border: 1px solid #eeeeee; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);">
+                                            <tr>
+                                                <td style="padding: 16px 25px; border-bottom: 1px dashed #d1d5db;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td style="font-size: 15px; font-weight: 500; color: #555555;">Số lượng vé</td>
+                                                            <td align="right" style="font-size: 15px; font-weight: 600; color: #333333;" th:text="${ticketsCount + ' vé'}">2 vé</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td style="padding: 16px 25px;">
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td style="font-size: 19px; font-weight: 700; color: #e71a0f;">Tổng tiền</td>
+                                                            <td align="right" style="font-size: 19px; font-weight: 700; color: #e71a0f;" th:text="${totalPrice}">200.000 VNĐ</td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Notes Section -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #eef2ff; border: 1px solid #c7d2fe; border-radius: 16px; margin-bottom: 30px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);">
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="padding-bottom: 15px;">
+                                                    <p style="font-size: 17px; font-weight: 600; color: #3730a3; margin: 0; display: flex; align-items: center;">
+                                                        <span style="display: inline-block; margin-right: 10px; font-size: 20px;">ℹ️</span> Điều Khoản & Lưu Ý Quan Trọng
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                                        <tr>
+                                                            <td style="padding-left: 22px; padding-bottom: 10px; position: relative; font-size: 14px; color: #4b5563;">
+                                                                <span style="position: absolute; left: 0; top: 0; color: #4f46e5; font-size: 18px;">•</span>
+                                                                Vui lòng có mặt tại rạp trước giờ chiếu ít nhất 15 phút để đảm bảo trải nghiệm tốt nhất.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-left: 22px; padding-bottom: 10px; position: relative; font-size: 14px; color: #4b5563;">
+                                                                <span style="position: absolute; left: 0; top: 0; color: #4f46e5; font-size: 18px;">•</span>
+                                                                Xuất trình email này tại quầy vé hoặc máy bán vé tự động để nhận vé cứng.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-left: 22px; padding-bottom: 10px; position: relative; font-size: 14px; color: #4b5563;">
+                                                                <span style="position: absolute; left: 0; top: 0; color: #4f46e5; font-size: 18px;">•</span>
+                                                                Vé đã mua không được hoàn trả hoặc quy đổi thành tiền mặt.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-left: 22px; padding-bottom: 10px; position: relative; font-size: 14px; color: #4b5563;">
+                                                                <span style="position: absolute; left: 0; top: 0; color: #4f46e5; font-size: 18px;">•</span>
+                                                                Mỗi vé chỉ có giá trị sử dụng một lần cho đúng suất chiếu đã đặt.
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td style="padding-left: 22px; position: relative; font-size: 14px; color: #4b5563;">
+                                                                <span style="position: absolute; left: 0; top: 0; color: #4f46e5; font-size: 18px;">•</span>
+                                                                Vui lòng tuân thủ các quy định của rạp chiếu phim.
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer Section -->
+                    <tr>
+                        <td style="background: linear-gradient(to bottom, #222222, #111111); padding: 40px 30px; text-align: center; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center" style="padding-bottom: 20px;">
+                                        <p style="font-size: 19px; font-weight: 600; color: #ffffff; margin: 0; letter-spacing: 0.3px;">Chúc bạn có những khoảnh khắc xem phim tuyệt vời!</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-bottom: 25px;">
+                                        <table border="0" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td style="padding: 0 9px;">
+                                                    <a href="#" class="social-icon" style="display: inline-block; width: 40px; height: 40px; background-color: #e71a0f; border-radius: 50%; text-align: center; line-height: 40px; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold;">F</a>
+                                                </td>
+                                                <td style="padding: 0 9px;">
+                                                    <a href="#" class="social-icon" style="display: inline-block; width: 40px; height: 40px; background-color: #e71a0f; border-radius: 50%; text-align: center; line-height: 40px; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold;">T</a>
+                                                </td>
+                                                <td style="padding: 0 9px;">
+                                                    <a href="#" class="social-icon" style="display: inline-block; width: 40px; height: 40px; background-color: #e71a0f; border-radius: 50%; text-align: center; line-height: 40px; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold;">I</a>
+                                                </td>
+                                                <td style="padding: 0 9px;">
+                                                    <a href="#" class="social-icon" style="display: inline-block; width: 40px; height: 40px; background-color: #e71a0f; border-radius: 50%; text-align: center; line-height: 40px; color: #ffffff; text-decoration: none; font-size: 18px; font-weight: bold;">Y</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" style="padding-bottom: 20px;">
+                                        <p style="font-size: 14px; line-height: 1.7; color: #a0a0a0; margin: 0; padding-bottom: 5px;">Hotline Hỗ Trợ: <strong style="color: #cccccc;">1900 6017</strong></p>
+                                        <p style="font-size: 14px; line-height: 1.7; color: #a0a0a0; margin: 0; padding-bottom: 5px;">Email: <strong style="color: #cccccc;">hoidap@cgv.vn</strong></p>
+                                        <p style="font-size: 14px; line-height: 1.7; color: #a0a0a0; margin: 0;">Website: <strong style="color: #cccccc;">www.cgv.vn</strong></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="80%" style="margin: 25px 0;">
+                                            <tr>
+                                                <td style="border-bottom: 1px solid #333333;"></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center">
+                                        <p style="font-size: 13px; color: #a0a0a0; margin: 0; padding-bottom: 15px;">Đây là email được gửi tự động. Vui lòng không trả lời trực tiếp email này.</p>
+                                        <p style="font-size: 13px; color: #a0a0a0; margin: 0;">&copy; <span th:text="${#dates.year(#dates.createNow())}">2024</span> Cinema. Bảo lưu mọi quyền.</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,103 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.3'
+    id 'io.spring.dependency-management' version '1.1.4'
+    id 'jacoco'
+}
+
+group = 'com.main-project'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+ext {
+    set('springCloudVersion', "2023.0.0")
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+    implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.postgresql:postgresql:42.7.3'
+    runtimeOnly 'com.mysql:mysql-connector-j'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.3.0'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'com.nimbusds:nimbus-jose-jwt:9.1.1'
+
+    // Thêm Axon Framework
+    implementation 'org.axonframework:axon-spring-boot-starter:4.12.2'
+
+    // Thêm dependency vào common module
+    implementation 'com.do_an:common:1.0.0'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+
+    testLogging {
+        events "failed", "skipped"
+        exceptionFormat "full"
+        showExceptions true
+        showCauses true
+        showStackTraces true
+    }
+
+    afterTest { descriptor, result ->
+        def className = descriptor.className
+                ? descriptor.className.substring(descriptor.className.lastIndexOf('.') + 1)
+                : descriptor.name
+        def displayName = descriptor.displayName ?: descriptor.name
+        def statusMap = ['SUCCESS': 'PASSED', 'FAILURE': 'FAILED', 'SKIPPED': 'SKIPPED']
+        def status = statusMap.get(result.resultType.toString(), result.resultType.toString())
+        def reset = '\u001B[0m'
+        def colorMap = ['PASSED': '\u001B[32m', 'FAILED': '\u001B[31m', 'SKIPPED': '\u001B[33m']
+        def color = colorMap.get(status)
+        def coloredStatus = color ? "${color}${status}${reset}" : status
+
+        println "${className} > ${displayName} ${coloredStatus}"
+    }
+
+    finalizedBy tasks.named('jacocoTestReport')
+    finalizedBy 'generateCustomTestStatus'
+}
+
+jacocoTestReport {
+    dependsOn tasks.named('test')
+    reports {
+        html.required = true
+        xml.required = true
+        csv.required = false
+    }
+}
+
+tasks.register('generateCustomTestStatus', Exec) {
+    dependsOn tasks.named('test')
+    workingDir projectDir
+    commandLine 'powershell', '-ExecutionPolicy', 'Bypass', '-File', 'generate-custom-test-status.ps1'
+}
+
+
+

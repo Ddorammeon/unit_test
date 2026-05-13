@@ -1,0 +1,1042 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.main_project.clinical_service.saga.ConsultationSagaTest" tests="48" skipped="0" failures="6" errors="0" timestamp="2026-05-13T14:35:44" hostname="DESKTOP-9TQBJQE" time="5.143">
+  <properties/>
+  <testcase name="CLN-SRV-UT-026 - InvoicePersistenceFailed should set saga status to InvoiceFailed" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="4.079"/>
+  <testcase name="CLN-SRV-UT-030 - MedicalHistoryPersistenceFailed should not dispatch rollback twice when already triggered" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.084"/>
+  <testcase name="CLN-SRV-UT-034 - MedicalHistoryRollbackCompleted should forward rollback reason to appointment rollback command" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.041"/>
+  <testcase name="CLN-SRV-UT-042 - MedicalHistoryPersistenceFailed should keep rollback triggered state when rollback dispatch future fails" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.066"/>
+  <testcase name="CLN-SRV-UT-024 - MedicalHistoryPersistenceFailed should dispatch rollback medical history command" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.015"/>
+  <testcase name="CLN-SRV-UT-023 - MedicalHistoryPersistenceFailed should set saga status to MedicalHistoryFailed" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.013"/>
+  <testcase name="CLN-SRV-UT-014 - MedicalHistoryPersisted should set saga status to InvoicePending" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.032"/>
+  <testcase name="CLN-SRV-UT-010 - AppointmentStarted should reject empty medical services list" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.056">
+    <failure message="org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at app//org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at app//org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at app//org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.appointmentStartedShouldRejectEmptyMedicalServicesList(ConsultationSagaTest.java:128)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="CLN-SRV-UT-037 - MedicalHistoryRollbackCompleted should do nothing when appointment id is missing" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.019"/>
+  <testcase name="CLN-SRV-UT-007 - AppointmentStarted should generate invoice id" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.009"/>
+  <testcase name="CLN-SRV-UT-018 - MedicalHistoryPersisted should pass copied medical services to invoice command" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.009"/>
+  <testcase name="CLN-SRV-UT-048 - MedicalHistoryRollbackCompleted should use appointment id as rollback command target" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.01"/>
+  <testcase name="CLN-SRV-UT-009 - AppointmentStarted should reject null patient id" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.016">
+    <failure message="org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected java.lang.IllegalArgumentException to be thrown, but nothing was thrown.
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at app//org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at app//org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at app//org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.appointmentStartedShouldRejectNullPatientId(ConsultationSagaTest.java:122)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="CLN-SRV-UT-025 - MedicalHistoryPersistenceFailed should mark medical history rollback as triggered" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.024"/>
+  <testcase name="CLN-SRV-UT-036 - MedicalHistoryRollbackCompleted should not dispatch appointment rollback twice" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.013"/>
+  <testcase name="CLN-SRV-UT-005 - AppointmentStarted should replace null medical services with empty list" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.005"/>
+  <testcase name="CLN-SRV-UT-006 - AppointmentStarted should generate medical history id" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.005"/>
+  <testcase name="CLN-SRV-UT-004 - AppointmentStarted should copy medical services into saga state" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.005"/>
+  <testcase name="CLN-SRV-UT-021 - InvoicePersisted should update invoice id from event" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.009"/>
+  <testcase name="CLN-SRV-UT-022 - InvoicePersisted should set saga status to ExaminationStarted" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.008"/>
+  <testcase name="CLN-SRV-UT-029 - InvoicePersistenceFailed should not dispatch rollback twice when already triggered" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.02"/>
+  <testcase name="CLN-SRV-UT-001 - AppointmentStarted should store patient id in saga state" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.005"/>
+  <testcase name="CLN-SRV-UT-008 - AppointmentStarted should set saga status to MedicalHistoryPending" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.011"/>
+  <testcase name="CLN-SRV-UT-016 - MedicalHistoryPersisted should dispatch CreateInvoiceCommand with generated invoice id" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.012"/>
+  <testcase name="CLN-SRV-UT-031 - MedicalHistoryPersistenceFailed should do nothing when medical history id is missing" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.008"/>
+  <testcase name="CLN-SRV-UT-035 - MedicalHistoryRollbackCompleted should mark appointment rollback as triggered" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.008"/>
+  <testcase name="CLN-SRV-UT-015 - MedicalHistoryPersisted should update medical history id from event" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.011"/>
+  <testcase name="CLN-SRV-UT-002 - AppointmentStarted should store appointment id in saga state" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.017"/>
+  <testcase name="CLN-SRV-UT-040 - AppointmentStarted should keep state even when medical history dispatch future fails" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.012"/>
+  <testcase name="CLN-SRV-UT-039 - AppointmentRolledBack should reset rollback trigger flags" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.06">
+    <failure message="org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (2 failures)&#13;&#10;&#9;org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;&#13;&#10;&#9;org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;" type="org.gradle.internal.exceptions.DefaultMultiCauseException">org.gradle.internal.exceptions.DefaultMultiCauseException: Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
+	org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:80)
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
+	at app//org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.appointmentRolledBackShouldResetRollbackTriggerFlags(ConsultationSagaTest.java:397)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	Suppressed: org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
+		at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+		at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+		at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+		at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+		at app//com.main_project.clinical_service.saga.ConsultationSagaTest.lambda$appointmentRolledBackShouldResetRollbackTriggerFlags$13(ConsultationSagaTest.java:398)
+		at app//org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base@17.0.16/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base@17.0.16/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base@17.0.16/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base@17.0.16/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base@17.0.16/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base@17.0.16/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base@17.0.16/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 7 more
+	Suppressed: org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
+		at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+		at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+		at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+		at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+		at app//com.main_project.clinical_service.saga.ConsultationSagaTest.lambda$appointmentRolledBackShouldResetRollbackTriggerFlags$14(ConsultationSagaTest.java:399)
+		at app//org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base@17.0.16/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base@17.0.16/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+		at java.base@17.0.16/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base@17.0.16/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base@17.0.16/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base@17.0.16/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base@17.0.16/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 7 more
+Cause 1: org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.lambda$appointmentRolledBackShouldResetRollbackTriggerFlags$13(ConsultationSagaTest.java:398)
+	at app//org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+	at java.base@17.0.16/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.16/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.16/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.16/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.16/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base@17.0.16/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.16/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
+	at app//org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.appointmentRolledBackShouldResetRollbackTriggerFlags(ConsultationSagaTest.java:397)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+Cause 2: org.opentest4j.AssertionFailedError: expected: &lt;false&gt; but was: &lt;true&gt;
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at app//org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at app//org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at app//org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.lambda$appointmentRolledBackShouldResetRollbackTriggerFlags$14(ConsultationSagaTest.java:399)
+	at app//org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+	at java.base@17.0.16/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base@17.0.16/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base@17.0.16/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base@17.0.16/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base@17.0.16/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base@17.0.16/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base@17.0.16/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
+	at app//org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
+	at app//org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.appointmentRolledBackShouldResetRollbackTriggerFlags(ConsultationSagaTest.java:397)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="CLN-SRV-UT-028 - InvoicePersistenceFailed should mark medical history rollback as triggered" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.008"/>
+  <testcase name="CLN-SRV-UT-032 - InvoicePersistenceFailed should trigger appointment rollback directly when medical history id is missing" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.098">
+    <failure message="Wanted but not invoked:&#10;commandGateway.send(&#10;    &lt;any com.do_an.common.command.RollbackAppointmentCommand&gt;&#10;);&#10;-&gt; at com.main_project.clinical_service.saga.ConsultationSagaTest.invoicePersistenceFailedShouldTriggerAppointmentRollbackDirectlyWhenMedicalHistoryIdMissing(ConsultationSagaTest.java:333)&#10;&#10;However, there was exactly 1 interaction with this mock:&#10;commandGateway.send(&#10;    CreateMedicalHistoryCommand(clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222, patientId=33333333-3333-3333-3333-333333333333, medicalHistoryId=f8184efe-3882-4a89-91b3-2b65525a2c69)&#10;);&#10;-&gt; at com.main_project.clinical_service.saga.ConsultationSaga.on(ConsultationSaga.java:71)&#10;&#10;" type="org.mockito.exceptions.verification.WantedButNotInvoked">Wanted but not invoked:
+commandGateway.send(
+    &lt;any com.do_an.common.command.RollbackAppointmentCommand&gt;
+);
+-&gt; at com.main_project.clinical_service.saga.ConsultationSagaTest.invoicePersistenceFailedShouldTriggerAppointmentRollbackDirectlyWhenMedicalHistoryIdMissing(ConsultationSagaTest.java:333)
+
+However, there was exactly 1 interaction with this mock:
+commandGateway.send(
+    CreateMedicalHistoryCommand(clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222, patientId=33333333-3333-3333-3333-333333333333, medicalHistoryId=f8184efe-3882-4a89-91b3-2b65525a2c69)
+);
+-&gt; at com.main_project.clinical_service.saga.ConsultationSaga.on(ConsultationSaga.java:71)
+
+
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.invoicePersistenceFailedShouldTriggerAppointmentRollbackDirectlyWhenMedicalHistoryIdMissing(ConsultationSagaTest.java:333)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="CLN-SRV-UT-033 - MedicalHistoryRollbackCompleted should dispatch rollback appointment command" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.011"/>
+  <testcase name="CLN-SRV-UT-017 - MedicalHistoryPersisted should dispatch CreateInvoiceCommand with appointment patient and doctor ids" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.022"/>
+  <testcase name="CLN-SRV-UT-045 - InvoicePersisted should overwrite generated invoice id with persisted id" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.013"/>
+  <testcase name="CLN-SRV-UT-027 - InvoicePersistenceFailed should dispatch rollback medical history command" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.007"/>
+  <testcase name="CLN-SRV-UT-047 - MedicalHistoryPersisted should use clinical id as invoice command target aggregate" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.01"/>
+  <testcase name="CLN-SRV-UT-013 - AppointmentStarted should associate saga with appointment and clinical ids" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.009"/>
+  <testcase name="CLN-SRV-UT-046 - AppointmentStarted should keep a defensive copy of medical services list" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.007"/>
+  <testcase name="CLN-SRV-UT-043 - MedicalHistoryRollbackCompleted should keep appointment rollback triggered when dispatch future fails" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.028"/>
+  <testcase name="CLN-SRV-UT-019 - MedicalHistoryPersisted should reject event before saga start" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.009">
+    <failure message="org.opentest4j.AssertionFailedError: Expected java.lang.IllegalStateException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: Expected java.lang.IllegalStateException to be thrown, but nothing was thrown.
+	at app//org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at app//org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at app//org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at app//org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3115)
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryPersistedShouldRejectEventBeforeSagaStart(ConsultationSagaTest.java:221)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="CLN-SRV-UT-012 - AppointmentStarted should dispatch CreateMedicalHistoryCommand with appointment and patient ids" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.014"/>
+  <testcase name="CLN-SRV-UT-011 - AppointmentStarted should dispatch CreateMedicalHistoryCommand with clinical id" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.007"/>
+  <testcase name="CLN-SRV-UT-038 - AppointmentRolledBack should set saga status to RolledBack" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.006"/>
+  <testcase name="CLN-SRV-UT-041 - MedicalHistoryPersisted should keep invoice pending state when invoice dispatch future fails" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.015"/>
+  <testcase name="CLN-SRV-UT-020 - MedicalHistoryPersisted should not dispatch invoice when no medical services exist" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.022">
+    <failure message="org.mockito.exceptions.verification.NeverWantedButInvoked: &#10;commandGateway.send(&#10;    &lt;any com.do_an.common.command.CreateInvoiceCommand&gt;&#10;);&#10;Never wanted here:&#10;-&gt; at com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryPersistedShouldNotDispatchInvoiceWhenNoMedicalServicesExist(ConsultationSagaTest.java:229)&#10;But invoked here:&#10;-&gt; at com.main_project.clinical_service.saga.ConsultationSaga.on(ConsultationSaga.java:99) with arguments: [CreateInvoiceCommand(clinicalId=11111111-1111-1111-1111-111111111111, invoiceId=8fe546ae-9762-437c-b105-5abe9cd2d733, appointmentId=22222222-2222-2222-2222-222222222222, patientId=33333333-3333-3333-3333-333333333333, medicalHistoryId=55555555-5555-5555-5555-555555555555, doctorId=44444444-4444-4444-4444-444444444444, medicalServices=[])]&#10;" type="org.mockito.exceptions.verification.NeverWantedButInvoked">org.mockito.exceptions.verification.NeverWantedButInvoked: 
+commandGateway.send(
+    &lt;any com.do_an.common.command.CreateInvoiceCommand&gt;
+);
+Never wanted here:
+-&gt; at com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryPersistedShouldNotDispatchInvoiceWhenNoMedicalServicesExist(ConsultationSagaTest.java:229)
+But invoked here:
+-&gt; at com.main_project.clinical_service.saga.ConsultationSaga.on(ConsultationSaga.java:99) with arguments: [CreateInvoiceCommand(clinicalId=11111111-1111-1111-1111-111111111111, invoiceId=8fe546ae-9762-437c-b105-5abe9cd2d733, appointmentId=22222222-2222-2222-2222-222222222222, patientId=33333333-3333-3333-3333-333333333333, medicalHistoryId=55555555-5555-5555-5555-555555555555, doctorId=44444444-4444-4444-4444-444444444444, medicalServices=[])]
+
+	at app//com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryPersistedShouldNotDispatchInvoiceWhenNoMedicalServicesExist(ConsultationSagaTest.java:229)
+	at java.base@17.0.16/java.lang.reflect.Method.invoke(Method.java:569)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base@17.0.16/java.util.ArrayList.forEach(ArrayList.java:1511)
+</failure>
+  </testcase>
+  <testcase name="CLN-SRV-UT-044 - AppointmentStarted should preserve clinical id in saga state" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.004"/>
+  <testcase name="CLN-SRV-UT-003 - AppointmentStarted should store doctor id in saga state" classname="com.main_project.clinical_service.saga.ConsultationSagaTest" time="0.007"/>
+  <system-out><![CDATA[21:35:48.158 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.184 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=1ed8b795-3115-4de3-8668-5888054e68a3
+21:35:48.198 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.202 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Invoice persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=invoice down
+21:35:48.202 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackMedicalHistoryCommand for appointment 22222222-2222-2222-2222-222222222222 reason=Invoice failed: invoice down
+21:35:48.207 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.309 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.311 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=b2a99b23-3378-4ad5-ad38-a88f9d1f7207
+21:35:48.312 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.322 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Medical history persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=db fail
+21:35:48.426 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.429 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=c1515301-5ea6-4cd7-ace8-bd09bccf8b9f
+21:35:48.430 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.436 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Medical history rollback completed for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.436 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackAppointmentCommand for appointment 22222222-2222-2222-2222-222222222222 reason=rollback ok
+21:35:48.442 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackAppointmentCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.472 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.474 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=3bd15fbe-3e84-40f8-bdde-74ffb3baae40
+21:35:48.475 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand failed clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222: dispatch fail
+java.lang.RuntimeException: dispatch fail
+	at com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryPersistenceFailedShouldKeepRollbackTriggeredWhenDispatchFutureFails(ConsultationSagaTest.java:423)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+21:35:48.513 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Medical history persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=db fail
+21:35:48.513 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackMedicalHistoryCommand for appointment 22222222-2222-2222-2222-222222222222 reason=Medical history failed: db fail
+21:35:48.514 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- RollbackMedicalHistoryCommand failed clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222: dispatch fail
+java.lang.RuntimeException: dispatch fail
+	at com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryPersistenceFailedShouldKeepRollbackTriggeredWhenDispatchFutureFails(ConsultationSagaTest.java:423)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+21:35:48.537 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.544 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=12ba2cf1-4cf1-4757-94e5-f083289dd87f
+21:35:48.544 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.545 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Medical history persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=db fail
+21:35:48.545 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackMedicalHistoryCommand for appointment 22222222-2222-2222-2222-222222222222 reason=Medical history failed: db fail
+21:35:48.546 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.557 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.560 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=89447557-0fad-447e-ad6a-42e50011f8c4
+21:35:48.561 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.561 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Medical history persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=db fail
+21:35:48.561 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackMedicalHistoryCommand for appointment 22222222-2222-2222-2222-222222222222 reason=Medical history failed: db fail
+21:35:48.562 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.583 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.585 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=1c492295-5b03-402c-b3e5-9cc20ce914e8
+21:35:48.588 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.594 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:48.595 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222
+21:35:48.597 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.610 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.611 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=116af029-12fe-4f70-9518-cb4f48780857
+21:35:48.612 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.665 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.666 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=b2161120-5ee2-4284-a427-269c948ab900
+21:35:48.667 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.667 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Medical history rollback completed for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.685 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.686 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=8ef7eb59-02fe-4c7c-8317-4994a5195dd5
+21:35:48.686 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.696 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.697 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=de7d352e-22da-4a88-893c-68e70ebe2e84
+21:35:48.698 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.699 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:48.699 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222
+21:35:48.700 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.709 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.709 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=f06f736a-eb26-4954-881e-bcfcb4d92a09
+21:35:48.710 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.710 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Medical history rollback completed for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.710 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackAppointmentCommand for appointment 22222222-2222-2222-2222-222222222222 reason=rollback ok
+21:35:48.711 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackAppointmentCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.729 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.730 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=9fd4dcd1-f235-40f9-a100-1f5ef5f17ab1
+21:35:48.731 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.760 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.761 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=a9d86a2d-5ed6-41d3-8ad4-d3bfbb580ed5
+21:35:48.761 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.761 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Medical history persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=db fail
+21:35:48.762 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackMedicalHistoryCommand for appointment 22222222-2222-2222-2222-222222222222 reason=Medical history failed: db fail
+21:35:48.762 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.771 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.773 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=9ae08e21-0653-421a-9158-5a041bff92a8
+21:35:48.776 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.776 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Medical history rollback completed for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.794 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.795 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=f55ea8d7-7213-4b3e-8755-d143bdcc1500
+21:35:48.795 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.801 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.802 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=5882657b-0fe7-4c57-9ba1-980c29926f37
+21:35:48.802 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.809 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.809 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=d34f23e9-7eef-416d-9ec0-0d501e9d1128
+21:35:48.810 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.815 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.815 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=913f881e-7961-4da7-a9e8-01913880f499
+21:35:48.816 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.819 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Invoice 66666666-6666-6666-6666-666666666666 created for appointment 22222222-2222-2222-2222-222222222222, saga status -> ExaminationStarted
+21:35:48.827 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.828 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=3e4b1fd8-b3bd-4f82-8e5c-6c209ab6206b
+21:35:48.828 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.829 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Invoice 66666666-6666-6666-6666-666666666666 created for appointment 22222222-2222-2222-2222-222222222222, saga status -> ExaminationStarted
+21:35:48.842 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.845 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=f83ebced-11fa-4263-b989-9a6f088d6ec4
+21:35:48.847 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.848 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Invoice persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=invoice down
+21:35:48.862 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.862 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=ee58290d-3694-4e5c-ad41-4c6bddd144dd
+21:35:48.863 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.872 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.874 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=4f722836-e24b-44ac-8d9d-cd2db267ca9d
+21:35:48.875 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.881 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.882 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=2b73ea70-71c3-4abb-8a32-52b9d4fa3b31
+21:35:48.884 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.886 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:48.886 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222
+21:35:48.888 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.899 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.900 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=6eeff416-a02b-4f8d-b409-19a0d4c0599f
+21:35:48.902 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.902 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Medical history persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=db fail
+21:35:48.908 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.909 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=f0224b9e-e14a-40ca-8eac-0892ab8e984d
+21:35:48.910 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.910 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Medical history rollback completed for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.910 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackAppointmentCommand for appointment 22222222-2222-2222-2222-222222222222 reason=rollback ok
+21:35:48.911 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackAppointmentCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.919 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.920 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=c9f4ab74-9907-4a1e-aa7d-28f903551601
+21:35:48.921 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.922 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:48.923 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222
+21:35:48.923 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.940 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.943 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=fdb093ff-34b1-4147-a7f1-ba0c19adc447
+21:35:48.946 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.956 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.957 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=10c024c5-e101-42f3-874f-662ae6d0c66d
+21:35:48.957 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand failed clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222: dispatch fail
+java.lang.RuntimeException: dispatch fail
+	at com.main_project.clinical_service.saga.ConsultationSagaTest.appointmentStartedShouldKeepStateWhenMedicalHistoryDispatchFutureFails(ConsultationSagaTest.java:406)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+21:35:48.966 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.967 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=dedfd034-3e8c-4ece-b28d-da09e681b5fd
+21:35:48.968 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:48.972 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Appointment 22222222-2222-2222-2222-222222222222 rolled back due to rollback ok, saga terminated
+21:35:49.030 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.031 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=52ae112a-9b1d-42ee-93c8-1ccf82907129
+21:35:49.032 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.032 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Invoice persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=invoice down
+21:35:49.032 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackMedicalHistoryCommand for appointment 22222222-2222-2222-2222-222222222222 reason=Invoice failed: invoice down
+21:35:49.033 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.049 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.050 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=f8184efe-3882-4a89-91b3-2b65525a2c69
+21:35:49.051 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.051 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Invoice persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=invoice down
+21:35:49.138 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.139 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=b759bc47-5be2-4b61-b735-05b22fa75c82
+21:35:49.141 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.143 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Medical history rollback completed for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.144 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackAppointmentCommand for appointment 22222222-2222-2222-2222-222222222222 reason=rollback ok
+21:35:49.144 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackAppointmentCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.151 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.152 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=0fd79af4-d484-4b91-b5a0-0e27baf5f500
+21:35:49.152 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.152 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:49.153 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222
+21:35:49.153 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.175 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.176 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=783aad81-a94d-46cf-b9f5-80030c8e162a
+21:35:49.177 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.178 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Invoice 66666666-6666-6666-6666-666666666666 created for appointment 22222222-2222-2222-2222-222222222222, saga status -> ExaminationStarted
+21:35:49.193 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.194 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=8ae518af-e570-4557-a9f9-a3d421ab75a8
+21:35:49.194 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.194 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- Invoice persistence failed for appointment 22222222-2222-2222-2222-222222222222 reason=invoice down
+21:35:49.195 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackMedicalHistoryCommand for appointment 22222222-2222-2222-2222-222222222222 reason=Invoice failed: invoice down
+21:35:49.195 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- RollbackMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.204 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.205 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=e79a3e6b-59dd-4ce2-bb6b-b1667afbec2b
+21:35:49.206 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.207 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:49.207 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222
+21:35:49.208 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.215 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.216 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=713ffab4-cc05-4b81-8567-bc5d8239f7d2
+21:35:49.217 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.227 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.228 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=e761debd-cda4-40f5-b21d-37298ffc251a
+21:35:49.230 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.237 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.239 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=1a26e319-fbf2-4608-a9dd-f834e312e66e
+21:35:49.241 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand failed clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222: dispatch fail
+java.lang.RuntimeException: dispatch fail
+	at com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryRollbackCompletedShouldKeepAppointmentRollbackTriggeredWhenDispatchFutureFails(ConsultationSagaTest.java:432)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+21:35:49.252 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Medical history rollback completed for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.253 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Triggering RollbackAppointmentCommand for appointment 22222222-2222-2222-2222-222222222222 reason=rollback ok
+21:35:49.254 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- RollbackAppointmentCommand failed appointmentId=22222222-2222-2222-2222-222222222222: dispatch fail
+java.lang.RuntimeException: dispatch fail
+	at com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryRollbackCompletedShouldKeepAppointmentRollbackTriggeredWhenDispatchFutureFails(ConsultationSagaTest.java:432)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+21:35:49.265 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:49.266 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=null, appointmentId=null
+21:35:49.266 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand dispatched successfully for appointment null
+21:35:49.277 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.280 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=040dfedf-6a11-4815-90c2-44bd1a8a6d59
+21:35:49.281 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.292 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.293 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=2ddd8f9a-a996-4225-a0ef-9157d6c3222d
+21:35:49.293 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.300 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.301 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=79a6c0d3-64b2-4c90-b553-ef1ec02562ed
+21:35:49.301 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.301 [Test worker] WARN com.main_project.clinical_service.saga.ConsultationSaga -- Appointment 22222222-2222-2222-2222-222222222222 rolled back due to rollback ok, saga terminated
+21:35:49.309 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.309 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=e71de557-d665-4d92-8b66-e4819c08d23c
+21:35:49.310 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand failed clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222: dispatch fail
+java.lang.RuntimeException: dispatch fail
+	at com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryPersistedShouldKeepInvoicePendingWhenDispatchFutureFails(ConsultationSagaTest.java:414)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+21:35:49.315 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:49.315 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222
+21:35:49.316 [Test worker] ERROR com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand failed clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222: dispatch fail
+java.lang.RuntimeException: dispatch fail
+	at com.main_project.clinical_service.saga.ConsultationSagaTest.medicalHistoryPersistedShouldKeepInvoicePendingWhenDispatchFutureFails(ConsultationSagaTest.java:414)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.junit.platform.commons.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:728)
+	at org.junit.jupiter.engine.execution.MethodInvocation.proceed(MethodInvocation.java:60)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$ValidatingInvocation.proceed(InvocationInterceptorChain.java:131)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.intercept(TimeoutExtension.java:156)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestableMethod(TimeoutExtension.java:147)
+	at org.junit.jupiter.engine.extension.TimeoutExtension.interceptTestMethod(TimeoutExtension.java:86)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker$ReflectiveInterceptorCall.lambda$ofVoidMethod$0(InterceptingExecutableInvoker.java:103)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.lambda$invoke$0(InterceptingExecutableInvoker.java:93)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain$InterceptedInvocation.proceed(InvocationInterceptorChain.java:106)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.proceed(InvocationInterceptorChain.java:64)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.chainAndInvoke(InvocationInterceptorChain.java:45)
+	at org.junit.jupiter.engine.execution.InvocationInterceptorChain.invoke(InvocationInterceptorChain.java:37)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:92)
+	at org.junit.jupiter.engine.execution.InterceptingExecutableInvoker.invoke(InterceptingExecutableInvoker.java:86)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeTestMethod$7(TestMethodTestDescriptor.java:218)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeTestMethod(TestMethodTestDescriptor.java:214)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:139)
+	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:69)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
+	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
+	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
+	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
+	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
+	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:198)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:169)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:93)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:58)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:141)
+	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:57)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:103)
+	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:85)
+	at org.junit.platform.launcher.core.DelegatingLauncher.execute(DelegatingLauncher.java:47)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.processAllTestClasses(JUnitPlatformTestClassProcessor.java:124)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor$CollectAllTestClassesExecutor.access$000(JUnitPlatformTestClassProcessor.java:99)
+	at org.gradle.api.internal.tasks.testing.junitplatform.JUnitPlatformTestClassProcessor.stop(JUnitPlatformTestClassProcessor.java:94)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:63)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:92)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:200)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:132)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:121)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:71)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+21:35:49.324 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.325 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=d4e05d22-9605-4731-85be-e1b4e90683cc
+21:35:49.326 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.326 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Medical history 55555555-5555-5555-5555-555555555555 created, saga status -> InvoicePending
+21:35:49.326 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateInvoiceCommand clinicalId=11111111-1111-1111-1111-111111111111, appointmentId=22222222-2222-2222-2222-222222222222
+21:35:49.327 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateInvoiceCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.347 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.347 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=dce38d5d-63c4-4ba3-a84c-384170cbb844
+21:35:49.347 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.355 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- ConsultationSaga started for appointment 22222222-2222-2222-2222-222222222222
+21:35:49.356 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- Dispatching CreateMedicalHistoryCommand clinicalId=11111111-1111-1111-1111-111111111111, medicalHistoryId=f0b6ddd1-f929-46c5-87fb-4b559430fbf7
+21:35:49.357 [Test worker] INFO com.main_project.clinical_service.saga.ConsultationSaga -- CreateMedicalHistoryCommand dispatched successfully for appointment 22222222-2222-2222-2222-222222222222
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

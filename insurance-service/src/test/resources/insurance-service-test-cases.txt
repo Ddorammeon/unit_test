@@ -1,0 +1,43 @@
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-001 - createPolicy should save a unique policy PASSED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-002 - createPolicy should reject duplicate policy number PASSED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-003 - createPolicy should reject coverage greater than 100 percent FAILED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-004 - createPolicy should reject end date before start date FAILED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-005 - updatePolicy should update existing unique policy PASSED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-006 - updatePolicy should reject duplicate changed policy number PASSED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-007 - getPoliciesByStatus should return mapped policies PASSED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-008 - getPoliciesByCoverageAmount should query minimum coverage PASSED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-009 - deletePolicy should delete existing policy PASSED
+InsuranceBusinessServiceTest > [Function: InsurancePolicyService] > INS-SRV-UT-010 - deletePolicy should throw when policy is missing PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-011 - createPatientInsurance should save new patient insurance PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-012 - createPatientInsurance should reject duplicate patient insurance PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-013 - createPatientInsurance should reject expired insurance FAILED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-014 - updatePatientInsurance should update same patient without duplicate check failure PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-015 - updatePatientInsurance should reject duplicate changed patient PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-016 - getActiveInsurances should query active insurance by today PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-017 - getExpiredInsurances should query expired insurance by today PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-018 - isValidInsurance should return true for active non expired insurance PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-019 - isValidInsurance should return false when patient has no active insurance PASSED
+InsuranceBusinessServiceTest > [Function: PatientInsuranceService] > INS-SRV-UT-020 - deletePatientInsurance should delete existing insurance PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-021 - processInvoiceClaim should split covered item by coverage ratio and max PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-022 - processInvoiceClaim should make patient pay full amount when service is uncovered PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-023 - processInvoiceClaim should reject expired patient insurance PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-024 - processInvoiceClaim should reject inactive patient insurance PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-025 - processInvoiceClaim should not create claim when no item is covered FAILED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-026 - processInvoiceItemsForValidation should assign claim item id for covered item PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-027 - processInvoiceItemsForValidation should keep claim item id null for uncovered item PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-028 - createClaimFromValidationEvent should aggregate totals PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-029 - createClaimItemRequestFromInvoiceItem should calculate insurance pay ratio PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-030 - createClaim should save claim for existing patient insurance PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-031 - updateClaim should update existing claim PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-032 - approveClaim should set approved status and approval date PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-033 - approveClaim should reject an already rejected claim FAILED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-034 - rejectClaim should set rejected status and reason PASSED
+InsuranceBusinessServiceTest > [Function: InsuranceClaimService] > INS-SRV-UT-035 - deleteClaim should throw when claim is missing PASSED
+InsuranceBusinessServiceTest > [Function: ClaimDocumentService] > INS-SRV-UT-036 - createDocument should save document for existing claim PASSED
+InsuranceBusinessServiceTest > [Function: ClaimDocumentService] > INS-SRV-UT-037 - getDocumentsByClaimId should return mapped documents PASSED
+InsuranceBusinessServiceTest > [Function: ClaimDocumentService] > INS-SRV-UT-038 - getDocumentsByStatus should query status PASSED
+InsuranceBusinessServiceTest > [Function: ClaimDocumentService] > INS-SRV-UT-039 - updateDocument should update existing document PASSED
+InsuranceBusinessServiceTest > [Function: ClaimDocumentService] > INS-SRV-UT-040 - updateDocumentStatus should change document status PASSED
+InsuranceBusinessServiceTest > [Function: ClaimDocumentService] > INS-SRV-UT-041 - updateDocumentStatus should reject invalid status FAILED
+InsuranceBusinessServiceTest > [Function: ClaimDocumentService] > INS-SRV-UT-042 - deleteDocument should delete existing document PASSED
+InsuranceBusinessServiceTest > [Function: ClaimDocumentService] > INS-SRV-UT-043 - deleteDocumentsByClaimId should delete all claim documents PASSED

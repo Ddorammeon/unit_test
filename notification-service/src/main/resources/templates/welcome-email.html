@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Chào mừng đến với hệ thống đặt vé xem phim</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+      color: #333;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    .content {
+      padding: 20px 0;
+    }
+    .footer {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      font-size: 12px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <h1>Chào mừng đến với hệ thống đặt vé xem phim!</h1>
+  </div>
+  <div class="content">
+    <p>Xin chào <strong th:text="${userName}">User</strong>,</p>
+    <p>Chúng tôi rất vui mừng chào đón bạn đến với hệ thống đặt vé xem phim của chúng tôi!</p>
+    <p>Tài khoản của bạn đã được tạo thành công với email: <strong th:text="${userEmail}">email@example.com</strong></p>
+    <p>Bạn có thể đăng nhập để tiếp tục sử dụng dịch vụ của chúng tôi.</p>
+    <p>Cảm ơn bạn đã đăng ký!</p>
+  </div>
+  <div class="footer">
+    <p>Đây là email tự động, vui lòng không trả lời email này.</p>
+    <p>&copy; 2025 Hệ thống đặt vé xem phim. Tất cả quyền được bảo lưu.</p>
+  </div>
+</div>
+</body>
+</html>

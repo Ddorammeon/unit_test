@@ -1,0 +1,3 @@
+rootProject.name = 'appointment-service'
+
+includeBuild '../common'

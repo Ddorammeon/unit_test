@@ -1,0 +1,61 @@
+DoctorDegreeServiceTest > [Function: createDoctorDegree()] > DOC-DEG-UT-001 - Create degree successfully PASSED
+DoctorDegreeServiceTest > [Function: createDoctorDegree()] > DOC-DEG-UT-002 - Reject degree creation when doctor missing PASSED
+DoctorDegreeServiceTest > [Function: getAllDoctorDegrees()] > DOC-DEG-UT-003 - Return all mapped degrees PASSED
+DoctorDegreeServiceTest > [Function: getDoctorDegreeById()] > DOC-DEG-UT-004 - Return degree by id when found PASSED
+DoctorDegreeServiceTest > [Function: getDoctorDegreeById()] > DOC-DEG-UT-005 - Throw when degree id is missing PASSED
+DoctorDegreeServiceTest > [Function: getDegreesByDoctorId()] > DOC-DEG-UT-006 - Return degrees by doctor id PASSED
+DoctorDegreeServiceTest > [Function: updateDoctorDegree()] > DOC-DEG-UT-007 - Update degree successfully PASSED
+DoctorDegreeServiceTest > [Function: updateDoctorDegree()] > DOC-DEG-UT-008 - Reject update for missing degree PASSED
+DoctorDegreeServiceTest > [Function: deleteDoctorDegree()] > DOC-DEG-UT-009 - Delete degree successfully PASSED
+DoctorDegreeServiceTest > [Function: deleteDoctorDegree()] > DOC-DEG-UT-010 - Reject delete for missing degree PASSED
+DoctorEntityTest > [Function: addDegree()] > DOC-ENT-UT-001 - addDegree should create bidirectional degree PASSED
+DoctorEntityTest > [Function: removeDegree()] > DOC-ENT-UT-002 - removeDegree should detach degree from doctor PASSED
+DoctorEntityTest > [Function: removeDegreeById()] > DOC-ENT-UT-003 - removeDegreeById should return true for existing degree PASSED
+DoctorEntityTest > [Function: removeDegreeById()] > DOC-ENT-UT-004 - removeDegreeById should return false for missing degree PASSED
+DoctorEntityTest > [Function: updateDegrees()] > DOC-ENT-UT-005 - updateDegrees should replace existing degrees PASSED
+DoctorEntityTest > [Function: updateDegrees()] > DOC-ENT-UT-006 - updateDegrees with null should clear degrees PASSED
+DoctorEntityTest > [Function: clearDegrees()] > DOC-ENT-UT-007 - clearDegrees should remove all degrees PASSED
+DoctorEntityTest > [Function: updateBasicInfo()] > DOC-ENT-UT-008 - updateBasicInfo should replace business fields PASSED
+DoctorEntityTest > [Function: removeDegreeById()] > DOC-ENT-UT-009 - removeDegreeById should clear bidirectional link when degree is removed FAILED
+DoctorEntityTest > [Function: clearDegrees()] > DOC-ENT-UT-010 - clearDegrees should clear bidirectional links for all degrees FAILED
+DoctorServiceTest > [Function: createDoctor()] > DOC-SRV-UT-001 - Create doctor successfully when user does not exist PASSED
+DoctorServiceTest > [Function: createDoctor()] > DOC-SRV-UT-002 - Reject duplicate doctor creation PASSED
+DoctorServiceTest > [Function: getAllDoctors()] > DOC-SRV-UT-003 - Return all mapped doctors PASSED
+DoctorServiceTest > [Function: getDoctorById()] > DOC-SRV-UT-004 - Return doctor by id when found PASSED
+DoctorServiceTest > [Function: getDoctorById()] > DOC-SRV-UT-005 - Throw when doctor id is missing PASSED
+DoctorServiceTest > [Function: updateDoctor()] > DOC-SRV-UT-006 - Update doctor successfully PASSED
+DoctorServiceTest > [Function: updateDoctor()] > DOC-SRV-UT-007 - Reject update for missing doctor PASSED
+DoctorServiceTest > [Function: deleteDoctor()] > DOC-SRV-UT-008 - Delete doctor successfully PASSED
+DoctorServiceTest > [Function: deleteDoctor()] > DOC-SRV-UT-009 - Reject delete for missing doctor PASSED
+DoctorServiceTest > [Function: updateDoctor()] > DOC-SRV-UT-010 - updateDoctor should preserve existing degrees when degrees are omitted FAILED
+DoctorWorkScheduleServiceTest > [Function: createDoctorWorkSchedule()] > DOC-WS-UT-001 - Create doctor work schedule successfully PASSED
+DoctorWorkScheduleServiceTest > [Function: createDoctorWorkSchedule()] > DOC-WS-UT-002 - Reject create when doctor missing PASSED
+DoctorWorkScheduleServiceTest > [Function: getAllDoctorWorkSchedules()] > DOC-WS-UT-003 - Return all mapped doctor work schedules PASSED
+DoctorWorkScheduleServiceTest > [Function: getDoctorWorkScheduleById()] > DOC-WS-UT-004 - Return doctor work schedule by id when found PASSED
+DoctorWorkScheduleServiceTest > [Function: getDoctorWorkScheduleById()] > DOC-WS-UT-005 - Throw when doctor work schedule id is missing PASSED
+DoctorWorkScheduleServiceTest > [Function: getDoctorWorkSchedulesByDoctorId()] > DOC-WS-UT-006 - Return doctor work schedules by doctor id PASSED
+DoctorWorkScheduleServiceTest > [Function: updateDoctorWorkSchedule()] > DOC-WS-UT-007 - Update doctor work schedule successfully PASSED
+DoctorWorkScheduleServiceTest > [Function: deleteDoctorWorkSchedule()] > DOC-WS-UT-008 - Delete doctor work schedule successfully PASSED
+DoctorWorkScheduleServiceTest > [Function: deleteDoctorWorkSchedule()] > DOC-WS-UT-009 - Reject delete for missing doctor work schedule PASSED
+EntityLifecycleTest > [Function: DoctorDegree.onCreate()] > LIFE-UT-001 - DoctorDegree onCreate should generate id PASSED
+EntityLifecycleTest > [Function: WorkSchedule.onCreate()] > LIFE-UT-002 - WorkSchedule onCreate should generate id PASSED
+EntityLifecycleTest > [Function: DoctorWorkSchedule.onCreate()] > LIFE-UT-003 - DoctorWorkSchedule onCreate should set id and timestamps PASSED
+EntityLifecycleTest > [Function: DoctorWorkSchedule.onUpdate()] > LIFE-UT-004 - DoctorWorkSchedule onUpdate should refresh updatedAt PASSED
+EntityMapperTest > [Function: toDoctorEntity()] > MAP-UT-001 - toDoctorEntity should map doctor and nested degrees PASSED
+EntityMapperTest > [Function: updateDoctorEntity()] > MAP-UT-002 - updateDoctorEntity should replace degrees and basic info PASSED
+EntityMapperTest > [Function: updateDoctorEntity()] > MAP-UT-003 - updateDoctorEntity with null degrees should clear degrees PASSED
+EntityMapperTest > [Function: toDoctorResponse()] > MAP-UT-004 - toDoctorResponse should map nested degrees PASSED
+EntityMapperTest > [Function: toWorkScheduleEntity()] > MAP-UT-005 - toWorkScheduleEntity should map schedule fields PASSED
+EntityMapperTest > [Function: updateWorkScheduleEntity()] > MAP-UT-006 - updateWorkScheduleEntity should overwrite schedule fields PASSED
+EntityMapperTest > [Function: toDoctorWorkScheduleEntity()] > MAP-UT-007 - toDoctorWorkScheduleEntity should map doctor and schedule links PASSED
+EntityMapperTest > [Function: updateDoctorWorkScheduleEntity()] > MAP-UT-008 - updateDoctorWorkScheduleEntity should overwrite associations PASSED
+EntityMapperTest > [Function: null-safety mapping methods] > MAP-UT-009 - null inputs should return null or keep target unchanged PASSED
+EntityMapperTest > [Function: updateDoctorEntity()] > MAP-UT-010 - updateDoctorEntity should preserve existing degrees when request omits degree list FAILED
+WorkScheduleServiceTest > [Function: createWorkSchedule()] > WORK-SRV-UT-001 - Create work schedule successfully PASSED
+WorkScheduleServiceTest > [Function: getAllWorkSchedules()] > WORK-SRV-UT-002 - Return all mapped work schedules PASSED
+WorkScheduleServiceTest > [Function: getWorkScheduleById()] > WORK-SRV-UT-003 - Return work schedule by id when found PASSED
+WorkScheduleServiceTest > [Function: getWorkScheduleById()] > WORK-SRV-UT-004 - Throw when work schedule id is missing PASSED
+WorkScheduleServiceTest > [Function: updateWorkSchedule()] > WORK-SRV-UT-005 - Update work schedule successfully PASSED
+WorkScheduleServiceTest > [Function: updateWorkSchedule()] > WORK-SRV-UT-006 - Reject update for missing work schedule PASSED
+WorkScheduleServiceTest > [Function: deleteWorkSchedule()] > WORK-SRV-UT-007 - Delete work schedule successfully PASSED
+WorkScheduleServiceTest > [Function: deleteWorkSchedule()] > WORK-SRV-UT-008 - Reject delete for missing work schedule PASSED

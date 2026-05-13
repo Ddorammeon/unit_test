@@ -1,0 +1,51 @@
+AxonConfigTest > [Function: AxonConfig] > CLN-SRV-UT-049 - configureXStream should allow common wildcard types PASSED
+AxonConfigTest > [Function: AxonConfig] > CLN-SRV-UT-050 - configureXStream should configure project wildcard types once PASSED
+ClinicalServiceApplicationTests > [Function: ClinicalServiceApplication] > CLN-SRV-UT-051 - main should start application bootstrap without throwing PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-001 - AppointmentStarted should store patient id in saga state PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-002 - AppointmentStarted should store appointment id in saga state PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-003 - AppointmentStarted should store doctor id in saga state PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-004 - AppointmentStarted should copy medical services into saga state PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-005 - AppointmentStarted should replace null medical services with empty list PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-006 - AppointmentStarted should generate medical history id PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-007 - AppointmentStarted should generate invoice id PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-008 - AppointmentStarted should set saga status to MedicalHistoryPending PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-009 - AppointmentStarted should reject null patient id FAILED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-010 - AppointmentStarted should reject empty medical services list FAILED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-011 - AppointmentStarted should dispatch CreateMedicalHistoryCommand with clinical id PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-012 - AppointmentStarted should dispatch CreateMedicalHistoryCommand with appointment and patient ids PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-013 - AppointmentStarted should associate saga with appointment and clinical ids PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-014 - MedicalHistoryPersisted should set saga status to InvoicePending PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-015 - MedicalHistoryPersisted should update medical history id from event PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-016 - MedicalHistoryPersisted should dispatch CreateInvoiceCommand with generated invoice id PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-017 - MedicalHistoryPersisted should dispatch CreateInvoiceCommand with appointment patient and doctor ids PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-018 - MedicalHistoryPersisted should pass copied medical services to invoice command PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-019 - MedicalHistoryPersisted should reject event before saga start FAILED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-020 - MedicalHistoryPersisted should not dispatch invoice when no medical services exist FAILED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-021 - InvoicePersisted should update invoice id from event PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-022 - InvoicePersisted should set saga status to ExaminationStarted PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-023 - MedicalHistoryPersistenceFailed should set saga status to MedicalHistoryFailed PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-024 - MedicalHistoryPersistenceFailed should dispatch rollback medical history command PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-025 - MedicalHistoryPersistenceFailed should mark medical history rollback as triggered PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-026 - InvoicePersistenceFailed should set saga status to InvoiceFailed PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-027 - InvoicePersistenceFailed should dispatch rollback medical history command PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-028 - InvoicePersistenceFailed should mark medical history rollback as triggered PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-029 - InvoicePersistenceFailed should not dispatch rollback twice when already triggered PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-030 - MedicalHistoryPersistenceFailed should not dispatch rollback twice when already triggered PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-031 - MedicalHistoryPersistenceFailed should do nothing when medical history id is missing PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-032 - InvoicePersistenceFailed should trigger appointment rollback directly when medical history id is missing FAILED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-033 - MedicalHistoryRollbackCompleted should dispatch rollback appointment command PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-034 - MedicalHistoryRollbackCompleted should forward rollback reason to appointment rollback command PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-035 - MedicalHistoryRollbackCompleted should mark appointment rollback as triggered PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-036 - MedicalHistoryRollbackCompleted should not dispatch appointment rollback twice PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-037 - MedicalHistoryRollbackCompleted should do nothing when appointment id is missing PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-038 - AppointmentRolledBack should set saga status to RolledBack PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-039 - AppointmentRolledBack should reset rollback trigger flags FAILED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-040 - AppointmentStarted should keep state even when medical history dispatch future fails PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-041 - MedicalHistoryPersisted should keep invoice pending state when invoice dispatch future fails PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-042 - MedicalHistoryPersistenceFailed should keep rollback triggered state when rollback dispatch future fails PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-043 - MedicalHistoryRollbackCompleted should keep appointment rollback triggered when dispatch future fails PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-044 - AppointmentStarted should preserve clinical id in saga state PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-045 - InvoicePersisted should overwrite generated invoice id with persisted id PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-046 - AppointmentStarted should keep a defensive copy of medical services list PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-047 - MedicalHistoryPersisted should use clinical id as invoice command target aggregate PASSED
+ConsultationSagaTest > [Function: ConsultationSaga] > CLN-SRV-UT-048 - MedicalHistoryRollbackCompleted should use appointment id as rollback command target PASSED

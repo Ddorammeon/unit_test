@@ -1,0 +1,50 @@
+PaymentAggregateTest > [Function: PaymentAggregate(...)] > PAY-SRV-UT-043 - PaymentAggregate constructor should apply PaymentInitiatedEvent PASSED
+PaymentAggregateTest > [Function: applyUpdatePaymentStatus()] > PAY-SRV-UT-044 - applyUpdatePaymentStatus should apply PaymentStatusUpdatedEvent PASSED
+PaymentAggregateTest > [Function: on(PaymentInitiatedEvent)] > PAY-SRV-UT-045 - on(PaymentInitiatedEvent) should set aggregate state to PENDING PASSED
+PaymentAggregateTest > [Function: on(PaymentStatusUpdatedEvent)] > PAY-SRV-UT-046 - on(PaymentStatusUpdatedEvent) should update aggregate status PASSED
+PaymentCommandHandlerTest > [Function: handle(CreatePaymentCommand)] > PAY-SRV-UT-040 - handle(CreatePaymentCommand) should create new payment aggregate instance PASSED
+PaymentCommandHandlerTest > [Function: handle(UpdatePaymentStatusCommand)] > PAY-SRV-UT-041 - handle(UpdatePaymentStatusCommand) should load aggregate by payment id string PASSED
+PaymentCommandHandlerTest > [Function: handle(UpdatePaymentStatusCommand)] > PAY-SRV-UT-042 - handle(UpdatePaymentStatusCommand) should forward status update to aggregate PASSED
+PaymentDomainModelTest > [Function: PaymentMethod#getDescription()] > PAY-SRV-UT-047 - PaymentMethod CASH should expose readable description PASSED
+PaymentDomainModelTest > [Function: PaymentMethod#getDescription()] > PAY-SRV-UT-048 - PaymentMethod BANK_TRANSFER should expose readable description PASSED
+PaymentDomainModelTest > [Function: PaymentStatus#getDescription()] > PAY-SRV-UT-049 - PaymentStatus SUCCESSFUL should expose readable description PASSED
+PaymentDomainModelTest > [Function: Payment.builder()] > PAY-SRV-UT-050 - Payment entity builder should preserve core business fields PASSED
+PaymentEventHandlerTest > [Function: on(PaymentStatusUpdatedEvent)] > PAY-SRV-UT-035 - on(PaymentStatusUpdatedEvent) should update payment and publish PaymentProcessedEvent for SUCCESSFUL PASSED
+PaymentEventHandlerTest > [Function: on(PaymentStatusUpdatedEvent)] > PAY-SRV-UT-036 - on(PaymentStatusUpdatedEvent) should publish PaymentFailedEvent for FAILED PASSED
+PaymentEventHandlerTest > [Function: on(PaymentStatusUpdatedEvent)] > PAY-SRV-UT-037 - on(PaymentStatusUpdatedEvent) should publish PaymentFailedEvent for CANCELLED PASSED
+PaymentEventHandlerTest > [Function: on(PaymentStatusUpdatedEvent)] > PAY-SRV-UT-038 - on(PaymentStatusUpdatedEvent) should not publish follow-up event for PENDING PASSED
+PaymentEventHandlerTest > [Function: on(PaymentStatusUpdatedEvent)] > PAY-SRV-UT-039 - on(PaymentStatusUpdatedEvent) should swallow persistence exceptions PASSED
+PaymentProcessingSagaTest > [Function: on(PaymentInitiatedEvent)] > PAY-SRV-UT-026 - on(PaymentInitiatedEvent) should store ids and schedule payment deadline PASSED
+PaymentProcessingSagaTest > [Function: on(PaymentInitiatedEvent)] > PAY-SRV-UT-027 - on(PaymentInitiatedEvent) should associate saga with invoice id PASSED
+PaymentProcessingSagaTest > [Function: on(PaymentProcessedEvent)] > PAY-SRV-UT-028 - on(PaymentProcessedEvent) should cancel deadline and mark invoice paid PASSED
+PaymentProcessingSagaTest > [Function: on(PaymentFailedEvent)] > PAY-SRV-UT-029 - on(PaymentFailedEvent) should cancel invoice when payment times out PASSED
+PaymentProcessingSagaTest > [Function: on(PaymentFailedEvent)] > PAY-SRV-UT-030 - on(PaymentFailedEvent) should only cancel deadline for non-timeout failure PASSED
+PaymentProcessingSagaTest > [Function: on(InvoiceCancelledEvent)] > PAY-SRV-UT-031 - on(InvoiceCancelledEvent) should return medicine reservation PASSED
+PaymentProcessingSagaTest > [Function: on(InvoiceCancelledEvent)] > PAY-SRV-UT-032 - on(InvoiceCancelledEvent) should cancel insurance claim when claim id exists PASSED
+PaymentProcessingSagaTest > [Function: onTimeout()] > PAY-SRV-UT-033 - onTimeout() should send TIMEOUT payment status update PASSED
+PaymentProcessingSagaTest > [Function: on(PaymentProcessedEvent)] > PAY-SRV-UT-034 - REAL FAIL business case: on(PaymentProcessedEvent) should mark prescription as sold when dispense order exists FAILED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-001 - initiatePayment should use invoice patientTotalPay for CASH PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-002 - initiatePayment should dispatch create and success commands for CASH PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-003 - initiatePayment should include dispense order id when inventory data exists PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-004 - initiatePayment should continue when patient service returns no medical history PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-005 - initiatePayment should continue when inventory lookup fails PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-006 - initiatePayment should create PayOS link for BANK_TRANSFER PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-007 - initiatePayment should dispatch create command asynchronously for BANK_TRANSFER PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-008 - initiatePayment should convert medicine item into PayOS payment item PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-009 - initiatePayment should reject invoice without items PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-010 - initiatePayment should reject invoice already paid PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-011 - initiatePayment should reject cancelled invoice PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-012 - initiatePayment should fail when invoice service lookup fails PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-013 - initiatePayment should fail when PayOS link creation fails PASSED
+PaymentServiceBusinessTest > [Function: getPaymentStatusOfInvoice()] > PAY-SRV-UT-014 - getPaymentStatusOfInvoice should return latest payment PASSED
+PaymentServiceBusinessTest > [Function: getPaymentById()] > PAY-SRV-UT-015 - getPaymentById should return mapped payment details PASSED
+PaymentServiceBusinessTest > [Function: updatePayment()] > PAY-SRV-UT-016 - updatePayment should set paidAt and mark invoice paid when status becomes SUCCESSFUL PASSED
+PaymentServiceBusinessTest > [Function: updatePayment()] > PAY-SRV-UT-017 - updatePayment should ignore blank description PASSED
+PaymentServiceBusinessTest > [Function: validateInvoice()] > PAY-SRV-UT-018 - validateInvoice should return invoice when invoice is billable PASSED
+PaymentServiceBusinessTest > [Function: deletePayment()] > PAY-SRV-UT-019 - deletePayment should reject successful payment PASSED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-020 - REAL FAIL business case: CASH payment should become successful immediately FAILED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-021 - REAL FAIL business case: initiatePayment should reject mismatched client total FAILED
+PaymentServiceBusinessTest > [Function: initiatePayment()] > PAY-SRV-UT-022 - REAL FAIL business case: initiatePayment should reject null payment method FAILED
+PaymentServiceBusinessTest > [Function: handlePayOSWebhook()] > PAY-SRV-UT-023 - REAL FAIL business case: handlePayOSWebhook should persist SUCCESSFUL status locally FAILED
+PaymentServiceBusinessTest > [Function: validateInvoice()] > PAY-SRV-UT-024 - REAL FAIL business case: validateInvoice should reject paid invoice FAILED
+PaymentServiceBusinessTest > [Function: handlePaymentCallback()] > PAY-SRV-UT-025 - REAL FAIL business case: callback success should mark invoice paid FAILED

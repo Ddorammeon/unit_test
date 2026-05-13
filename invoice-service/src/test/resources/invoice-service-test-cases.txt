@@ -1,0 +1,45 @@
+InvoiceCleanupServiceTest > [Function: cleanupExpiredInvoices()] > INV-CLN-UT-001 - cleanupExpiredInvoices should send cancel command for expired pending invoice PASSED
+InvoiceCleanupServiceTest > [Function: cleanupExpiredInvoices()] > INV-CLN-UT-002 - cleanupExpiredInvoices should also query waiting invoices FAILED
+InvoiceServiceTest > [Function: createInvoice()] > INV-SRV-UT-001 - createInvoice should generate invoice id for new invoice FAILED
+InvoiceServiceTest > [Function: createInvoice()] > INV-SRV-UT-002 - createInvoice should assign item ids FAILED
+InvoiceServiceTest > [Function: createInvoice()] > INV-SRV-UT-003 - createInvoice should set pending status and issueAt PASSED
+InvoiceServiceTest > [Function: createInvoice()] > INV-SRV-UT-004 - createInvoice should calculate totals from items PASSED
+InvoiceServiceTest > [Function: createInvoice()] > INV-SRV-UT-005 - createInvoice should set patient and insurance totals PASSED
+InvoiceServiceTest > [Function: updateInvoice()] > INV-SRV-UT-006 - updateInvoice should recalculate total and save PASSED
+InvoiceServiceTest > [Function: updateInvoice()] > INV-SRV-UT-007 - updateInvoice should sync header fields PASSED
+InvoiceServiceTest > [Function: updateInvoice()] > INV-SRV-UT-008 - updateInvoice should delete removed items PASSED
+InvoiceServiceTest > [Function: updateInvoice()] > INV-SRV-UT-009 - updateInvoice should add new items PASSED
+InvoiceServiceTest > [Function: updateInvoice()] > INV-SRV-UT-010 - updateInvoice should update existing items PASSED
+InvoiceServiceTest > [Function: markAsPaid()] > INV-SRV-UT-011 - markAsPaid should transition pending invoice to paid PASSED
+InvoiceServiceTest > [Function: markAsPaid()] > INV-SRV-UT-012 - markAsPaid should set paidAt PASSED
+InvoiceServiceTest > [Function: cancelInvoice()] > INV-SRV-UT-013 - cancelInvoice should cancel pending invoice PASSED
+InvoiceServiceTest > [Function: cancelInvoice()] > INV-SRV-UT-014 - cancelInvoice should reject paid invoice PASSED
+InvoiceServiceTest > [Function: getInvoiceById()] > INV-SRV-UT-015 - getInvoiceById should return mapped invoice PASSED
+InvoiceServiceTest > [Function: getInvoiceById()] > INV-SRV-UT-016 - getInvoiceById should throw when invoice is missing PASSED
+InvoiceServiceTest > [Function: listInvoices()] > INV-SRV-UT-017 - listInvoices should use newest-first order when no status is provided FAILED
+InvoiceServiceTest > [Function: listInvoices()] > INV-SRV-UT-018 - listInvoices should use status order query when status is provided FAILED
+InvoiceServiceTest > [Function: getInvoicesByAppointmentId()] > INV-SRV-UT-019 - getInvoicesByAppointmentId should map invoices PASSED
+InvoiceServiceTest > [Function: getInvoicesByAppointmentId()] > INV-SRV-UT-020 - getInvoicesByAppointmentId should return empty list when repository is empty PASSED
+InvoiceServiceTest > [Function: getInvoicesByPatientId()] > INV-SRV-UT-021 - getInvoicesByPatientId should return invoices for patient appointments PASSED
+InvoiceServiceTest > [Function: getInvoicesByPatientId()] > INV-SRV-UT-022 - getInvoicesByPatientId should apply status filter PASSED
+InvoiceServiceTest > [Function: getInvoicesByPatientId()] > INV-SRV-UT-023 - getInvoicesByPatientId should return empty on appointment client failure FAILED
+InvoiceServiceTest > [Function: addMedicineCharges()] > INV-SRV-UT-024 - addMedicineCharges should add items and update totals PASSED
+InvoiceServiceTest > [Function: addMedicineCharges()] > INV-SRV-UT-025 - addMedicineCharges should use medicine name from matching medicine items PASSED
+InvoiceServiceTest > [Function: addMedicineCharges()] > INV-SRV-UT-026 - addMedicineCharges should reject empty item set FAILED
+InvoiceServiceTest > [Function: applyInsuranceDiscount()] > INV-SRV-UT-027 - applyInsuranceDiscount should update totals PASSED
+InvoiceServiceTest > [Function: applyInsuranceDiscount()] > INV-SRV-UT-028 - applyInsuranceDiscount should update matching invoice items PASSED
+InvoiceServiceTest > [Function: applyInsuranceDiscount()] > INV-SRV-UT-029 - applyInsuranceDiscount should clamp final amount at zero PASSED
+InvoiceServiceTest > [Function: applyInsuranceDiscount()] > INV-SRV-UT-030 - applyInsuranceDiscount should reject discounts greater than invoice total FAILED
+InvoiceServiceTest > [Function: revertInsuranceDiscount()] > INV-SRV-UT-031 - revertInsuranceDiscount should reset totals and clear claim PASSED
+InvoiceServiceTest > [Function: removeMedicineCharges()] > INV-SRV-UT-032 - removeMedicineCharges should delete medicine items and recalculate totals PASSED
+InvoiceServiceTest > [Function: updateStatus()] > INV-SRV-UT-033 - updateStatus should set paid status and paidAt PASSED
+InvoiceServiceTest > [Function: updateStatus()] > INV-SRV-UT-034 - updateStatus should update arbitrary status PASSED
+InvoiceServiceTest > [Function: updateStatus()] > INV-SRV-UT-035 - updateStatus should reject invalid status values FAILED
+InvoiceServiceTest > [Function: canAddMedicineCharges()] > INV-SRV-UT-036 - canAddMedicineCharges should return true for pending invoice PASSED
+InvoiceServiceTest > [Function: canApplyInsuranceDiscount()] > INV-SRV-UT-037 - canApplyInsuranceDiscount should return false for paid invoice PASSED
+InvoiceServiceTest > [Function: canCancel()] > INV-SRV-UT-038 - canCancel should return true for pending invoice PASSED
+InvoiceServiceTest > [Function: canCancel()] > INV-SRV-UT-039 - canCancel should return false for paid invoice PASSED
+InvoiceServiceTest > [Function: canMarkAsPaid()] > INV-SRV-UT-040 - canMarkAsPaid should return true for pending invoice PASSED
+InvoiceServiceTest > [Function: canMarkAsPaid()] > INV-SRV-UT-041 - canMarkAsPaid should return false for paid invoice PASSED
+InvoiceServiceTest > [Function: addLabTestCharge()] > INV-SRV-UT-042 - addLabTestCharge should add a lab item to pending invoice PASSED
+InvoiceServiceTest > [Function: addLabTestCharge()] > INV-SRV-UT-043 - addLabTestCharge should use default description when missing PASSED
